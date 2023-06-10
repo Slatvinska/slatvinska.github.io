@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>PsyWarCheck</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f1f1f1;
+      color: #333;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    p {
+      text-align: justify;
+    }
+
+    h2 {
+      margin-top: 20px;
+    }
+
+    .button-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .button-container button {
+      margin: 5px;
+    }
+
+    /* Навігаційне меню внизу сторінки */
+    .navigation {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #f1f1f1;
+      padding: 10px 0;
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .navigation div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+      color: #555;
+      font-size: 12px;
+      cursor: pointer;
+    }
+
+    .navigation div i {
+      margin-bottom: 5px;
+    }
+
+    /* Клас активної іконки */
+    .active-icon i {
+      color: #ff0000;
+    }
+
+    /* Темна тема */
+    body.dark-mode {
+      background-color: #333;
+      color: #f1f1f1;
+    }
+
+    .navigation.dark-mode {
+      background-color: #333;
+      color: #f1f1f1;
+    }
+  </style>
+  <script>
+    function openLink(url) {
+      window.location.href = url;
+    }
+
+    function toggleDarkMode() {
+      const body = document.body;
+      const navigation = document.querySelector('.navigation');
+      body.classList.toggle('dark-mode');
+      navigation.classList.toggle('dark-mode');
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>PsyWarCheck</h1>
+    <p>Цей додаток є психологічним тестером під час війни. Ви дізнаєтесь про рівень психологічного здоров'я навіть у воєнний час завдяки діагностичним тестам і методикам</p>
+
+    <h2>Діагностичні тести</h2>
+    <div class="button-container">
+      <button onclick="openLink('https://slatvinska.github.io/aggression_test.html')">Агресія</button>
+      <button onclick="openLink('https://slatvinska.github.io/depression_test.html')">Депресія</button>
+      <button onclick="openLink('https://slatvinska.github.io/stress_test.html')">Стрес</button>
+      <button onclick="openLink('https://slatvinska.github.io/combat_stress_test.html')">Бойовий стрес</button>
+      <button onclick="openLink('https://slatvinska.github.io/anxiety_test.html')">Тривожність</button>
+    </div>
+
+    <h2>Методики</h2>
+    <div class="button-container">
+      <button onclick="openLink('https://slatvinska.github.io/aggression_metodics.html')">Агресія</button>
+      <button onclick="openLink('https://slatvinska.github.io/depression_metodics.html')">Депресія</button>
+      <button onclick="openLink('https://slatvinska.github.io/stress_metodics.html')">Стрес</button>
+    </div>
+  </div>
+
+  <!-- Навігаційне меню внизу сторінки -->
+  <div class="navigation">
+    <div onclick="openLink('https://slatvinska.github.io/all_tests.html')">
+      <i class="fas fa-tasks"></i>
+      <span>Всі тести</span>
+    </div>
+    <div onclick="openLink('https://slatvinska.github.io/progress.html')">
+      <i class="fas fa-chart-bar"></i>
+      <span>Прогрес</span>
+    </div>
+    <div onclick="openLink('https://slatvinska.github.io/settings.html')">
+      <i class="fas fa-cog"></i>
+      <span>Налаштування</span>
+    </div>
+    <div onclick="toggleDarkMode()">
+      <i class="fas fa-adjust"></i>
+      <span>Змінити тему</span>
+    </div>
+  </div>
+</body>
+</html>
