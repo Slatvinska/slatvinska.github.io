@@ -2,186 +2,57 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Методика діагностики показників і форм агресії А. Басса і А. Дарки</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Всі тести</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      background-color: #f1f1f1;
+      color: #333;
+    }
+
+    .button-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .button-container button {
+      margin: 5px;
+    }
+  </style>
 </head>
 <body>
-  <h1>Методика діагностики показників і форм агресії А. Басса і А. Дарки</h1>
-  <p>Опитувач агресивності Басса-Дарки (Buss – Durkee Hostility Inventory або BDHI) призначений для виявлення рівня агресивності респондентів. Опитувальник складається із 75 тверджень на які випробовуваний відповідає "так" або "ні".</p>
+  <div class="container">
+    <h2>Діагностичні тести</h2>
+    <div class="button-container">
+      <button onclick="openLink('https://slatvinska.github.io/aggression_test.html')">Тест агресивності (опитувальник Л.Г. Почебут) </button>
+      <button onclick="openLink('https://slatvinska.github.io/depression_test.html')">Диференціальна діагностика депресивних станів В.А. Жмурова</button>
+      <button onclick="openLink('https://slatvinska.github.io/stress_test.html')">Тест Люшера </button>
+      <button onclick="openLink('ttps://slatvinska.github.io/combat_stress_test.html')">Опитувальник бойового стресу Блінова О.А.</button>
+      <button onclick="openLink('https://slatvinska.github.io/anxiety_test.html')">Коротка шкала тривоги, депресії та ПТСР” (адаптація І. Котєньова)</button>
+    </div>
 
-  <form>
-    <p>1. Часом я не можу впоратися з бажанням заподіяти шкоду іншим</p>
-    <input type="radio" name="q1" value="yes">Так<br>
-    <input type="radio" name="q1" value="no"> Ні<br>
+    <h2>Методики</h2>
+    <div class="button-container">
+      <button onclick="openLink('https://slatvinska.github.io/aggression_metodics.html')">Методика діагностики показників та форм агресії А. Басса - А. Даркі</button>
+      <button onclick="openLink('https://slatvinska.github.io/depression_metodics.html')">Методика диференціальної діагностики депресивних станів В. Зунга (адаптація Т.І. Балашової)</button>
+      <button onclick="openLink('https://slatvinska.github.io/stress_metodics.html')">Методика діагностики стресостійкості та соціальної адаптації Холмса і Раге (оціночна шкала стресових подій Холмса-Раге)</button>
+    </div>
+  </div>
 
-    <p>2. Іноді пліткують про людей, яких не люблю</p>
-    <input type="radio" name="q2" value="yes">Так<br>
-    <input type="radio" name="q2" value="no"> Ні<br>
-
-    <p>3. Я легко дратуюся, але швидко заспокоююсь</p>
-    <input type="radio" name="q3" value="yes">Так<br>
-    <input type="radio" name="q3" value="no"> Ні<br>
-    
-    <p>4. Якщо мене не попросять по - хорошому, я не виконаю</p>
-    <input type="radio" name="q4" value="yes">Так<br>
-    <input type="radio" name="q4" value="no"> Ні<br>
-
-    <p>5. Я не завжди отримую те, що мені належить</p>
-    <input type="radio" name="q5" value="yes">Так<br>
-    <input type="radio" name="q5" value="no"> Ні<br>
-
-    <p>6. Я не знаю, що люди говорять про мене за моєю спиною</p>
-    <input type="radio" name="q6" value="yes">Так<br>
-    <input type="radio" name="q6" value="no"> Ні<br>
-
-    <p>7. Якщо я не схвалюю поведінку друзів, я даю їм це відчути</p>
-    <input type="radio" name="q7" value="yes">Так<br>
-    <input type="radio" name="q7" value="no"> Ні<br>
-    
-        <p>8. Коли мені траплялося обдурити кого - небудь, я відчував болісні докори сумління</p>
-    <input type="radio" name="q8" value="yes">Так<br>
-    <input type="radio" name="q8" value="no"> Ні<br>
-       
-      <p>9. Мені здається, що я не здатний вдарити людину</p>
-    <input type="radio" name="q9" value="yes">Так<br>
-    <input type="radio" name="q9" value="no"> Ні<br> 
-      
-      <p>10. Я ніколи не дратуюся настільки, щоб кидатися предметами</p>
-    <input type="radio" name="q10" value="yes">Так<br>
-    <input type="radio" name="q10" value="no"> Ні<br>
-      
-      <p>11. Я завжди поблажливий до чужих недоліків</p>
-    <input type="radio" name="q11" value="yes">Так<br>
-    <input type="radio" name="q11" value="no"> Ні<br>
-      
-      <p>12. Якщо мені не подобається встановлене правило, мені хочеться порушити його</p>
-    <input type="radio" name="q12" value="yes">Так<br>
-    <input type="radio" name="q12" value="no"> Ні<br>
-      
-      <p>13. Інші вміють майже завжди користуватися сприятливими обставинами</p>
-    <input type="radio" name="q13" value="yes">Так<br>
-    <input type="radio" name="q13" value="no"> Ні<br>
-      
-      <p>14. Я тримаюся насторожено з людьми, які ставляться до мене кілька більш дружньо, ніж я очікував</p>
-    <input type="radio" name="q14" value="yes">Так<br>
-    <input type="radio" name="q14" value="no"> Ні<br>
-      
-      <p>15. Я часто буваю не згоден з людьми</p>
-    <input type="radio" name="q15" value="yes">Так<br>
-    <input type="radio" name="q15" value="no"> Ні<br>
-      
-      <p>16. Іноді мені на розум приходять думки, яких я соромлюся</p>
-    <input type="radio" name="q16" value="yes">Так<br>
-    <input type="radio" name="q16" value="no"> Ні<br>
-      
-      <p>17. Якщо хто - небудь першим вдарить мене, я не відповім йому</p>
-    <input type="radio" name="q17" value="yes">Так<br>
-    <input type="radio" name="q17" value="no"> Ні<br>
-      
-      <p>18. Коли я дратуюся, я ляскаю дверима</p>
-    <input type="radio" name="q18" value="yes">Так<br>
-    <input type="radio" name="q18" value="no"> Ні<br>
-      
-      <p>19. Я набагато більш дратівливий, ніж здається</p>
-    <input type="radio" name="q19" value="yes">Так<br>
-    <input type="radio" name="q19" value="no"> Ні<br>
-      
-      <p>20. Якщо хто - то уявляє себе начальником, я завжди роблю йому наперекір</p>
-    <input type="radio" name="q20" value="yes">Так<br>
-    <input type="radio" name="q20" value="no"> Ні<br>
-      
-      <p>21. Мене трохи засмучує моя доля</p>
-    <input type="radio" name="q21" value="yes">Так<br>
-    <input type="radio" name="q21" value="no"> Ні<br>
-      
-      <p>22. Я думаю, що багато людей не люблять мене</p>
-    <input type="radio" name="q22" value="yes">Так<br>
-    <input type="radio" name="q22" value="no"> Ні<br>
-      
-      <p>23. Я не можу втриматися від суперечки, якщо люди не згодні зі мною</p>
-    <input type="radio" name="q23" value="yes">Так<br>
-    <input type="radio" name="q23" value="no"> Ні<br>
-      
-      <p>24.Люди, ухиляються від роботи, повинні відчувати почуття провини </p>
-    <input type="radio" name="q24" value="yes">Так<br>
-    <input type="radio" name="q24" value="no"> Ні<br>
-      
-      <p>25. Той, хто ображає мене і мою сім'ю, напрошується на бійку</p>
-    <input type="radio" name="q25" value="yes">Так<br>
-    <input type="radio" name="q25" value="no"> Ні<br>
-      
-      <p>26. Я не здатний на грубі жарти</p>
-    <input type="radio" name="q26" value="yes">Так<br>
-    <input type="radio" name="q26" value="no"> Ні<br>
-      
-      <p>27. Мене охоплює лють, коли з мене насміхаються</p>
-    <input type="radio" name="q27" value="yes">Так<br>
-    <input type="radio" name="q27" value="no"> Ні<br>
-      
-      <p>28. Коли люди корчать з себе начальників, я роблю все, щоб вони не зазнавалися</p>
-    <input type="radio" name="q28" value="yes">Так<br>
-    <input type="radio" name="q28" value="no"> Ні<br>
-      
-      <p>29. Майже щотижня я бачу кого - небудь, хто мені не подобається</p>
-    <input type="radio" name="q29" value="yes">Так<br>
-    <input type="radio" name="q29" value="no"> Ні<br>
-      
-      <p>30. Досить багато людей заздрять мені</p>
-    <input type="radio" name="q30" value="yes">Так<br>
-    <input type="radio" name="q30" value="no"> Ні<br>
-      
-      <p>31. Я вимагаю, щоб люди поважали мене</p>
-    <input type="radio" name="q31" value="yes">Так<br>
-    <input type="radio" name="q31" value="no"> Ні<br>
-      
-      <p>32. Мене пригнічує те, що я мало роблю д ля своїх батьків</p>
-    <input type="radio" name="q32" value="yes">Так<br>
-    <input type="radio" name="q32" value="no"> Ні<br>
-      
-      <p>33. Люди, які постійно переводять вас, варті того, щоб їх "клацнули по носі"</p>
-    <input type="radio" name="q33" value="yes">Так<br>
-    <input type="radio" name="q33" value="no"> Ні<br>
-      
-      <p>34. Я ніколи не буваю похмурим від злості</p>
-    <input type="radio" name="q34" value="yes">Так<br>
-    <input type="radio" name="q34" value="no"> Ні<br>
-      
-      <p>35. Якщо до мене ставляться гірше, ніж я того заслуговую, я не засмучуюсь</p>
-    <input type="radio" name="q35" value="yes">Так<br>
-    <input type="radio" name="q35" value="no"> Ні<br>
-      
-      <p>36. Якщо хто - то виводить мене з себе, я не звертаю уваги</p>
-    <input type="radio" name="q36" value="yes">Так<br>
-    <input type="radio" name="q36" value="no"> Ні<br>
-      
-      <p>37. Хоча я і не показую цього, мене іноді гризе заздрість</p>
-    <input type="radio" name="q37" value="yes">Так<br>
-    <input type="radio" name="q37" value="no"> Ні<br>
-      
-      <p>38. Іноді мені здається, що наді мною сміються</p>
-    <input type="radio" name="q38" value="yes">Так<br>
-    <input type="radio" name="q38" value="no"> Ні<br>
-      
-      <p>39. Навіть якщо я злюся, я не вдаюся до "сильним" виразам</p>
-    <input type="radio" name="q39" value="yes">Так<br>
-    <input type="radio" name="q39" value="no"> Ні<br>
-      
-      <p>40. Мені хочеться, щоб мої гріхи були прощені</p>
-    <input type="radio" name="q40" value="yes">Так<br>
-    <input type="radio" name="q40" value="no"> Ні<br>
-      
-      <p>41. Я рідко даю здачі, навіть якщо хтось - небудь ударить мене</p>
-    <input type="radio" name="q41" value="yes">Так<br>
-    <input type="radio" name="q41" value="no"> Ні<br>
-      
-      <p>42. Коли виходить не по - моєму, я іноді ображаюся</p>
-    <input type="radio" name="q21" value="yes">Так<br>
-    <input type="radio" name="q21" value="no"> Ні<br>
-      
-      <p>43. Іноді люди дратують мене однією своєю присутністю</p>
-    <input type="radio" name="q43" value="yes">Так<br>
-    <input type="radio" name="q43" value="no"> Ні<br>
-      
-    <button type="button" onclick="calculateScore()">Отримати результат</button>
-  </form>
+  <!-- Коментар про MIT ліцензію та автора -->
+  <!-- 
+    MIT License
+    Автор: Slatvinska Valeria
+  -->
 </body>
 </html>
