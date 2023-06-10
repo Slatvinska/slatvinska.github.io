@@ -3,16 +3,99 @@
 <head>
   <meta charset="utf-8">
   <title>Прогрес</title>
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts@3.28.3"></script>
+  <style>
+    #chart-container {
+      max-width: 600px;
+      margin: 20px auto;
+    }
+  </style>
 </head>
 <body>
   <h1>Прогрес</h1>
   <p>Тут ви можете переглянути історію проходження тестів.</p>
-   </div>
-    <!-- Коментар про MIT ліцензію та автора -->
-    <!-- 
-      MIT License
-      Автор: Slatvinska Valeria
-    -->
-  </div>
+
+  <div id="history-container"></div>
+
+  <div id="chart-container"></div>
+
+  <script>
+    function getTestHistory() {
+      const testHistory = localStorage.getItem('testHistory');
+      return testHistory ? JSON.parse(testHistory) : [];
+    }
+
+    function displayTestHistory() {
+      const historyContainer = document.getElementById('history-container');
+      const testHistory = getTestHistory();
+
+      if (testHistory.length === 0) {
+        historyContainer.innerHTML = '<p>Історія проходження тестів порожня.</p>';
+        return;
+      }
+
+      const historyList = document.createElement('ul');
+
+      testHistory.forEach((test, index) => {
+        const listItem = document.createElement('li');
+        listItem.textContent = `Тест ${index + 1}: ${test}`;
+        historyList.appendChild(listItem);
+      });
+
+      historyContainer.appendChild(historyList);
+
+      const chartContainer = document.getElementById('chart-container');
+      const completedTests = testHistory.length;
+      const totalTests = 10; // Загальна кількість тестів
+
+      const percentage = (completedTests / totalTests) * 100;
+
+      const chart = new ApexCharts(chartContainer, {
+        series: [percentage],
+        chart: {
+          height: 200,
+          type: 'radialBar',
+        },
+        plotOptions: {
+          radialBar: {
+            hollow: {
+              margin: 0,
+              size: '70%',
+            },
+            dataLabels: {
+              show: true,
+              name: {
+                fontSize: '16px',
+                fontWeight: 'bold',
+                offsetY: -10,
+              },
+              value: {
+                fontSize: '22px',
+                fontWeight: 'bold',
+                offsetY: 5,
+              },
+              total: {
+                show: true,
+                label: 'Пройдено',
+                formatter: function (w) {
+                  return `${completedTests} / ${totalTests}`;
+                },
+              },
+            },
+          },
+        },
+      });
+
+      chart.render();
+    }
+
+    displayTestHistory();
+  </script>
+
+  <!-- Коментар про MIT ліцензію та автора -->
+  <!-- 
+    MIT License
+    Автор: Slatvinska Valeria
+  -->
 </body>
-</html> 
+</html>
