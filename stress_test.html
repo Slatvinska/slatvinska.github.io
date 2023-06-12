@@ -2,14 +2,89 @@
 <html>
 <head>
     <title>Тест Люшера</title>
+    <style>
+        .color-circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        .color-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
 </head>
 <body>
     <h1>Тест Люшера</h1>
     <h3>Інструкція</h3>
     <p>Під час тесту вам будуть показані картки з різними кольорами.
-Ваше завдання - вказати, який колір вам подобається більше за інші в цей момент часу.Не намагайтеся асоціювати кольори з чимось стороннім, - наприклад, із кольором одягу або інтер'єру. Просто вибирайте картки, до яких ви відчуваєте більшу симпатію порівняно з іншими.
+        Ваше завдання - вказати, який колір вам подобається більше за інші в цей момент часу.
+        Не намагайтеся асоціювати кольори з чимось стороннім, - наприклад, із кольором одягу або інтер'єру.
+        Просто вибирайте картки, до яких ви відчуваєте більшу симпатію порівняно з іншими.
+        Якщо ви запускаєте тест на смартфоні, і у вас увімкнений фільтр синього світла - вимкніть його на час проходження.
+        Подібні фільтри сильно спотворюють кольори, результати тесту будуть некоректними.
+    </p>
 
-Якщо ви запускаєте тест на смартфоні, і у вас увімкнений фільтр синього світла - вимкніть його на час проходження. Подібні фільтри сильно спотворюють кольори, результати тесту будуть некоректними.</p>
-     
+    <div id="color-buttons">
+        <div class="color-row">
+            <div class="color-circle" onclick="selectColor('black')" style="background-color: black;"></div>
+            <div class="color-circle" onclick="selectColor('gray')" style="background-color: gray;"></div>
+            <div class="color-circle" onclick="selectColor('red')" style="background-color: red;"></div>
+            <div class="color-circle" onclick="selectColor('brown')" style="background-color: brown;"></div>
+        </div>
+        <div class="color-row">
+            <div class="color-circle" onclick="selectColor('yellow')" style="background-color: yellow;"></div>
+            <div class="color-circle" onclick="selectColor('blue')" style="background-color: blue;"></div>
+            <div class="color-circle" onclick="selectColor('green')" style="background-color: green;"></div>
+            <div class="color-circle" onclick="selectColor('purple')" style="background-color: purple;"></div>
+        </div>
+    </div>
+
+    <script>
+        var selectedColors = [];
+
+        function selectColor(color) {
+            selectedColors.push(color);
+
+            var colorCircle = document.querySelector("#color-buttons .color-circle[style*='background-color: " + color + "']");
+            colorCircle.style.opacity = "0.5";
+
+            if (selectedColors.length === 8) {
+                showResults();
+            }
+        }
+
+        function showResults() {
+            var colorMeanings = {
+                "black": "Ви відчуваєте себе вразливою людиною, маєте потребу в захисті.",
+                "gray": "Вам властива невпевненість у собі. Не сумнівайтеся, просто додайте в своє життя трохи фарб.",
+                "red": "Ви натура пристрасна, цілеспрямована, емоційна. Для вас цілком вірогідні яскраві сплески емоцій – від всеосяжної любові до лютої ненависті. Ви можете образити когось нечаянно і непоправно.",
+                "brown": "Ви спокійна, збалансована натура. Бути поряд із вами приємно. Ви зі старих добрих ідей, сталих цінностей. Але, можливо, трохи сумнівливі, надто обачливі. Іноді ви занадто важливіть негативні речі і забуваєте про позитив.",
+                "yellow": "Ви яскрава, сонячна натура, вам подобається все, що нове. Ви ентузіаст, завжди готові розпочати щось нове. Проте, вам не завжди вдається закінчити те, що ви починаєте.",
+                "blue": "Ви стабільна натура. У вас найчастіше настрій тихий, спокійний, врівноважений. Ви дуже відповідальна людина, любите порядок і дисципліну. Іноді вам бракує емоційності, але найголовніше, що ви можете управляти своїми емоціями і не піддаватися втратах.",
+                "green": "У вас є все, щоб домогтися успіху – жага життя, цілеспрямованість, потенціал. Ви любите життя і все, що вас оточує. Прагнете до своєї мети. Але є і мінус – ви піддані критиці – якщо не відчуваєте підтримки, втрачаєте впевненість у собі.",
+                "purple": "Ви допитлива, захоплена натура, схильна містифікувати світ навколо себе. Фіолетовий поєднує в собі протилежності, як і сама людина. Ви людина настрою – у вас бувають різкі переходи від активності до повного байдужості, з крайності в крайність, але в душі ви прагнете до гармонії. Такий колір часто вибирають натури творчі."
+            };
+
+            var resultsDiv = document.createElement("div");
+            resultsDiv.innerHTML = "<h3>Результати</h3>";
+
+            for (var i = 0; i < selectedColors.length; i++) {
+                var color = selectedColors[i];
+                var meaning = colorMeanings[color];
+
+                var resultItem = document.createElement("p");
+                resultItem.innerHTML = "<strong>" + color + ":</strong> " + meaning;
+
+                resultsDiv.appendChild(resultItem);
+            }
+
+            document.body.appendChild(resultsDiv);
+        }
+    </script>
 </body>
 </html>
