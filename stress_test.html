@@ -46,11 +46,19 @@
 
     <script>
         var selectedColors = [];
+        var colorButtons = document.querySelectorAll("#color-buttons .color-circle");
+
+        // Додаємо обробник події до кожної картки з кольором
+        for (var i = 0; i < colorButtons.length; i++) {
+            colorButtons[i].addEventListener("click", function() {
+                selectColor(this.dataset.color);
+            });
+        }
 
         function selectColor(color) {
             selectedColors.push(color);
 
-            var colorCircle = document.querySelector("#color-buttons .color-circle[style*='background-color: " + color + "']");
+            var colorCircle = document.querySelector("#color-buttons .color-circle[data-color='" + color + "']");
             colorCircle.style.opacity = "0.5";
 
             if (selectedColors.length === 8) {
@@ -85,6 +93,12 @@
 
             document.body.appendChild(resultsDiv);
         }
+
+        // Затримка на 1 хвилину перед зміною опцій для вибору кольорів
+        setTimeout(function() {
+            for (var i = 0; i < colorButtons.length; i++) {
+                colorButtons[i].style.opacity = "1";
+            }
+        }, 60000);
     </script>
 </body>
-</html>
