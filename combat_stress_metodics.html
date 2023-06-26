@@ -7,7 +7,32 @@
 <body>
   <h1>Методика вимірювання рівня бойового стресу В.М. Слатвінської</h1>
   <p>Прочитайте уважно кожне з приведених нижче тверджень і оберіть лише один із чотирьох варіантів відповідь залежно від того, як Ви себе почуваєте в даний момент. Над твердженнями довго не замислюйтесь, оскільки правильних чи неправильних варіантів відповідей немає</p>
-<script>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      background-color: #f1f1f1;
+      color: #333;
+    }
+
+    .button-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .button-container button {
+      margin: 5px;
+    }
+  </style>
+  <script>
     function interpretResults() {
       var q1 = parseInt(document.querySelector('input[name="q1"]:checked').value);
       var q2 = parseInt(document.querySelector('input[name="q2"]:checked').value);
