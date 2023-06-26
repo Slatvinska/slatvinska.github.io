@@ -7,7 +7,30 @@
 <body>
   <h1>Методика вимірювання рівня бойового стресу В.М. Слатвінської</h1>
   <p>Прочитайте уважно кожне з приведених нижче тверджень і оберіть лише один із чотирьох варіантів відповідь залежно від того, як Ви себе почуваєте в даний момент. Над твердженнями довго не замислюйтесь, оскільки правильних чи неправильних варіантів відповідей немає</p>
+<script>
+    function interpretResults() {
+      var q1 = parseInt(document.querySelector('input[name="q1"]:checked').value);
+      var q2 = parseInt(document.querySelector('input[name="q2"]:checked').value);
+      var q3 = parseInt(document.querySelector('input[name="q3"]:checked').value);
 
+      var totalScore = q1 + q2 + q3;
+
+      var interpretation = "";
+
+      if (totalScore >= 0 && totalScore <= 4) {
+        interpretation = "Бойовий стрес відсутній";
+      } else if (totalScore >= 5 && totalScore <= 7) {
+        interpretation = "Легкий ступінь бойового стресу";
+      } else if (totalScore >= 8 && totalScore <= 15) {
+        interpretation = "Середній ступінь бойового стресу";
+      } else {
+        interpretation = "Високий рівень бойового стресу";
+      }
+
+      document.getElementById("result").innerHTML = "Ваш результат: " + interpretation;
+    }
+  </script>
+  
   <form> 
     <h2>Як часто ви відчуваєте напруження або тривогу перед виконанням бойового завдання?</h3>
   <input type="radio" name="q1" value="1"> Ні, це не так<br>
@@ -132,3 +155,8 @@
 </form> 
   </form> 
  <button type="button" onclick="calculateScore()">Отримати результат</button>
+
+<p id="result"></p>
+
+</body>
+</html>
